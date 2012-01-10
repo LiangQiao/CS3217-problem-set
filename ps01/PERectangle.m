@@ -83,11 +83,11 @@
     
     self = [super init];
     if(self){
-        self.origin = o;
+        _origin = o;
      
-        self.width = w;
-        self.height = h;
-        self.rotation = r;
+        _width = w;
+        _height = h;
+        _rotation = r;
         
     }
     
@@ -98,16 +98,9 @@
 - (id)initWithRect:(CGRect)rect {
   // MODIFIES: self
   // EFFECTS: initializes the state of this rectangle using a CGRect
-    self = [super init];
-    if(self){
-        self.origin = rect.origin;
-        self.width = rect.size.width;
-        self.height = rect.size.height;
-        self.rotation = 0;
+    return [self initWithOrigin:rect.origin width:rect.width height:rect.height rotation:0];
         
-    }
     
-    return self;
 
 }
 
